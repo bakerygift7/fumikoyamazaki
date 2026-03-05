@@ -7,10 +7,7 @@ export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
-    // FIXME: ドメイン認証完了後、正しい送信元アドレスに変更してください
-    // 例: 'Fumiko Yamazaki <noreply@yamazakifumiko.com>'
-    // ドメイン認証前は 'onboarding@resend.dev' しか使えません。
-    const fromAddress = 'onboarding@resend.dev'; 
+    const fromAddress = 'Fumiko Yamazaki <noreply@yamazakifumiko.com>'; 
     
     // 受信したいメールアドレス（ふみさんのアドレス）
     const toAddress = 'fumikoara2311@gmail.com'; 
