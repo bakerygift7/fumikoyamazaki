@@ -70,7 +70,7 @@ export default function EbookPage() {
               
               <div className="pt-8">
                 <a 
-                  href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=X1cXM7"
+                  href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=MtUDnk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-[#06C755] rounded-full hover:shadow-[0_10px_30px_-10px_rgba(6,199,85,0.6)] transform hover:-translate-y-1 overflow-hidden"
@@ -180,7 +180,7 @@ export default function EbookPage() {
             
             <div className="mt-10">
               <a 
-                href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=X1cXM7"
+                href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=MtUDnk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-12 py-4 bg-[#06C755] text-white font-bold rounded-full shadow-lg hover:bg-[#05b34c] transition-all hover:-translate-y-1"
@@ -318,7 +318,7 @@ export default function EbookPage() {
             </p>
             
             <a 
-              href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=X1cXM7"
+              href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=MtUDnk"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white transition-all duration-300 bg-[#06C755] rounded-full hover:shadow-[0_10px_30px_-10px_rgba(6,199,85,0.6)] transform hover:-translate-y-1 overflow-hidden w-full md:w-auto"

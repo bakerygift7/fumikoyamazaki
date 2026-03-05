@@ -118,6 +118,17 @@ export default function AboutPage() {
 
       {/* History Section */}
       <section className="relative py-32 overflow-hidden bg-offwhite">
+        {/* 背景画像 - 右側に大きく配置 */}
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none hidden md:block">
+          <Image
+            src="/images/fumi-history.png"
+            alt=""
+            fill
+            className="object-cover object-left-top mask-image-gradient"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-offwhite via-transparent to-transparent" />
+        </div>
+
         <div className="container mx-auto px-6 relative z-10 max-w-4xl">
           <div className="text-center mb-20">
             <h2 className="font-mincho text-4xl font-bold text-charcoal mb-4">歩み</h2>
@@ -139,7 +150,7 @@ export default function AboutPage() {
               <div key={index} className={`relative md:flex items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute -left-[41px] md:left-1/2 md:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-gold-500 border-4 border-white shadow-md z-10" />
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'}`}>
-                  <h3 className="text-xl md:text-2xl font-mincho font-bold text-charcoal">
+                  <h3 className="text-xl md:text-2xl font-mincho font-bold text-charcoal bg-white/80 backdrop-blur-sm inline-block px-4 py-2 rounded-lg shadow-sm">
                     {event}
                   </h3>
                 </div>

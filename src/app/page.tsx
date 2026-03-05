@@ -538,13 +538,6 @@ export default function HomePage() {
               </div>
               
               <div className="space-y-6 text-gray-600 leading-loose text-base md:text-lg font-gothic">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-800 font-mincho mb-6 leading-relaxed border-b border-pink-100 pb-4">
-                  私は自分に自信をつけ、<br/>
-                  生徒さん主導ではなく<br/>
-                  <span className="text-pink-600">あなた主導の運動指導者</span>に<br/>
-                  なってもらいたい
-                </h3>
-
                 <p>
                   私はこれまで、常に自信がなく、いつもお客さんに迎合したりする自分を責めていました。
                 </p>

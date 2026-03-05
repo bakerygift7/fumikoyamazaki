@@ -8,11 +8,12 @@ export async function POST(request: Request) {
     const { name, email, message } = await request.json();
 
     // FIXME: ドメイン認証完了後、正しい送信元アドレスに変更してください
-    // 例: 'Fumiko Yamazaki <noreply@yourdomain.com>'
-    // 現在はテスト用に 'onboarding@resend.dev' を使用するか、ドメイン設定後に変更してください。
-    const fromAddress = 'Fumiko Yamazaki <noreply@example.com>'; 
-    // FIXME: 受信したいメールアドレスに変更してください
-    const toAddress = 'yamazakifumiko.work@gmail.com'; 
+    // 例: 'Fumiko Yamazaki <noreply@yamazakifumiko.com>'
+    // ドメイン認証前は 'onboarding@resend.dev' しか使えません。
+    const fromAddress = 'onboarding@resend.dev'; 
+    
+    // 受信したいメールアドレス（ふみさんのアドレス）
+    const toAddress = 'fumikoara2311@gmail.com'; 
 
     // 1. 管理者への通知メール
     const notify = await resend.emails.send({
