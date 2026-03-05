@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ShutterProblemSection from '@/components/shutter-problem-section'
 import ScrollRevealSection from '@/components/scroll-reveal-section'
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion'
 import { CheckCircle2, Search, Brain, Lightbulb } from 'lucide-react'
@@ -229,54 +230,8 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* 2. Problem Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="font-mincho text-3xl md:text-5xl font-bold text-charcoal mb-6">
-              こんな悩みはありませんか？
-            </h2>
-            <div className="w-20 h-1 bg-pink-200 mx-auto"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="bg-pink-50/50 p-8 rounded-[2.5rem] border border-pink-100 shadow-sm">
-                <p className="font-bold text-xl mb-8 text-pink-700">運動系の指導者を続けているあなたへ。</p>
-                <ul className="space-y-6">
-                  {[
-                    "トレーナーとして肉体労働をベースにしていつまで続けられるのだろう？",
-                    "がむしゃらに肉体労働を増やしても収入に限界がある",
-                    "一生懸命になろうとすればするほど空回りする",
-                    "自信がなく、いつもお客さんに迎合してしまう",
-                    "どうしてもビジネスが低単価になり、お客さんの言いなりになってしまう"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 group">
-                      <CheckCircle2 className="w-6 h-6 text-pink-500 shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                      <span className="text-lg text-charcoal font-medium leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            
-            <div className="text-center md:text-left space-y-8">
-              <p className="text-2xl md:text-3xl leading-loose font-bold text-charcoal font-mincho">
-                その悩みは、あなたの<br />
-                スキルや資格が足りないから<br />
-                ではありません。
-              </p>
-              <p className="text-xl md:text-2xl leading-relaxed font-bold text-pink-600">
-                ただ、<span className="relative inline-block">
-                  「自分のことが自分でわからない」
-                  <span className="absolute bottom-0 left-0 w-full h-3 bg-pink-100 -z-10"></span>
-                </span><br />
-                だけなのです。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 2. Problem Section (Shutter Reveal) */}
+      <ShutterProblemSection />
 
       {/* 3. Concept Section (Scroll Reveal) */}
       <div className="py-20 bg-offwhite text-center">
@@ -285,28 +240,76 @@ export default function HomePage() {
       </div>
       <ScrollRevealSection />
 
-      <section className="py-32 bg-charcoal text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-pink-500 blur-[120px]" />
-        </div>
-        
-        <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
-          <h3 className="font-mincho text-3xl md:text-4xl font-bold mb-12 leading-relaxed">
-            私は自分の自信をつけ、<br/>
-            生徒さん主導ではなく、<br/>
-            <span className="text-pink-400">あなた主導の運動指導者</span>に<br/>
-            なってもらいたい
-          </h3>
-          <div className="space-y-8 text-gray-300 leading-loose text-lg md:text-xl">
-            <p>
-              私自身、指導者を16年続けてきましたが、資格をたくさん取ったり技術を磨いたりしても、いつまで経っても自信のなさは消えませんでした。 しかし、ある時気づきました。
-            </p>
-            <p className="text-white font-bold text-2xl md:text-3xl py-4">
-              「自分の自信のなさは、自分のことが自分でわからないことに原因がある」
-            </p>
-            <p>
-              苦労して自分のこと、弱さ、強さ、そして人から見た魅力を理解した時、自然と自信がつき、お客さんに対しての態度と指導方法、客単価も劇的に変わっていきました。
-            </p>
+      <section className="py-32 bg-[#fffaf5] relative overflow-hidden">
+        {/* 背景装飾 */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-rose-50 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-50 rounded-full blur-3xl opacity-60 pointer-events-none translate-y-1/2 -translate-x-1/2" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+            
+            {/* 画像エリア */}
+            <div className="w-full md:w-1/2 relative order-2 md:order-1">
+              <div className="relative aspect-[4/5] max-w-md mx-auto">
+                {/* 画像背面の装飾 */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-rose-100 to-amber-100 rounded-[3rem] transform rotate-3 scale-95 opacity-60" />
+                <div className="absolute inset-0 border-2 border-rose-200 rounded-[3rem] transform -rotate-2 scale-105" />
+                
+                {/* 画像本体 */}
+                <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-2xl">
+                   <Image
+                     src="/images/fumi-message.png"
+                     alt="山﨑史子"
+                     fill
+                     className="object-cover object-center"
+                   />
+                </div>
+                
+                {/* 装飾的な引用符 */}
+                <div className="absolute -top-8 -left-8 text-8xl text-rose-200 font-serif opacity-50 leading-none">❝</div>
+                <div className="absolute -bottom-12 -right-8 text-8xl text-rose-200 font-serif opacity-50 leading-none">❞</div>
+              </div>
+            </div>
+
+            {/* テキストエリア */}
+            <div className="w-full md:w-1/2 space-y-10 order-1 md:order-2">
+              <div className="space-y-6">
+                <span className="inline-block py-1 px-3 rounded-full bg-rose-100 text-rose-600 text-xs font-bold tracking-widest uppercase">
+                  Message
+                </span>
+                <h3 className="font-mincho text-3xl lg:text-4xl font-bold leading-relaxed text-slate-800">
+                  私は自分の自信をつけ、<br/>
+                  生徒さん主導ではなく、<br/>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-600">
+                    あなた主導の運動指導者
+                  </span>に<br/>
+                  なってもらいたい
+                </h3>
+              </div>
+
+              <div className="space-y-6 text-slate-600 leading-loose text-lg font-gothic">
+                <p>
+                  私自身、指導者を16年続けてきましたが、資格をたくさん取ったり技術を磨いたりしても、いつまで経っても自信のなさは消えませんでした。しかし、ある時気づきました。
+                </p>
+                <div className="relative mt-8 mb-4 max-w-lg mx-auto md:mx-0">
+                   {/* 背景の傾いたレイヤー（左の画像とリンクさせる） */}
+                   <div className="absolute inset-0 bg-gradient-to-br from-rose-100 to-amber-50 rounded-[2.5rem] transform rotate-2 translate-y-2 opacity-60" />
+                   
+                   {/* メインの白いカード */}
+                   <div className="relative bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border border-rose-100 flex items-center justify-center">
+                     <p className="text-slate-800 font-bold text-xl md:text-2xl leading-relaxed font-mincho text-center">
+                       「自分の自信のなさは、<br/>
+                       <span className="inline-block bg-gradient-to-r from-rose-100/0 via-rose-100 to-rose-100/0 px-4 py-1 my-1 rounded-full">自分のことが自分でわからない</span><br/>
+                       ことに原因がある」
+                     </p>
+                   </div>
+                </div>
+                <p>
+                  苦労して自分のこと、弱さ、強さ、そして人から見た魅力を理解した時、自然と自信がつき、お客さんに対しての態度と指導方法、客単価も劇的に変わっていきました。
+                </p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
