@@ -383,29 +383,29 @@ export default function NenpyoPage() {
             </div>
 
             <div className="space-y-8 mb-12">
-              <div className="flex items-start gap-6 border-b border-slate-100 pb-6">
-                <div className="w-24 shrink-0 font-bold text-slate-500">期間</div>
+              <div className="flex items-start gap-4 border-b border-slate-100 pb-6">
+                <div className="w-14 shrink-0 font-bold text-slate-500 text-sm pt-0.5">期間</div>
                 <div className="text-lg font-bold text-slate-800">1ヶ月</div>
               </div>
-              <div className="flex items-start gap-6 border-b border-slate-100 pb-6">
-                <div className="w-24 shrink-0 font-bold text-slate-500">内容</div>
-                <div className="space-y-4">
+              <div className="flex items-start gap-4 border-b border-slate-100 pb-6">
+                <div className="w-14 shrink-0 font-bold text-slate-500 text-sm pt-1">内容</div>
+                <div className="space-y-4 flex-1 min-w-0">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-1 shrink-0" />
-                    <span>専用テキストによる自分年表の作成（自宅での内観ワーク）</span>
+                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-0.5 shrink-0" />
+                    <span className="leading-relaxed">専用テキストによる自分年表の作成（自宅での内観ワーク）</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-1 shrink-0" />
-                    <span>山﨑史子によるマンツーマン・ファシリテーション（オンラインセッション）</span>
+                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-0.5 shrink-0" />
+                    <span className="leading-relaxed">山﨑史子によるマンツーマン・ファシリテーション（オンラインセッション）</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-1 shrink-0" />
-                    <span>運動指導者としてどのように年表を生かしていったらいいかというアドバイス</span>
+                    <CheckCircle2 className="w-5 h-5 text-rose-500 mt-0.5 shrink-0" />
+                    <span className="leading-relaxed">運動指導者としてどのように年表を生かしていったらいいかというアドバイス</span>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-24 shrink-0 font-bold text-slate-500">価格</div>
+              <div className="flex items-center gap-4">
+                <div className="w-14 shrink-0 font-bold text-slate-500 text-sm">価格</div>
                 <div className="text-3xl md:text-4xl font-bold text-rose-600 font-mincho">70,000円<span className="text-sm text-slate-500 font-gothic ml-2 font-normal">（税抜）</span></div>
               </div>
             </div>
