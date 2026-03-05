@@ -315,49 +315,100 @@ export default function HomePage() {
       </section>
 
       {/* 4. Method Section */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-32 bg-white relative overflow-hidden">
+        {/* 背景の装飾 */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-rose-50 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-50 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-24">
-            <h2 className="font-mincho text-3xl md:text-5xl font-bold text-charcoal mb-6">指導者として輝くための3ステップ</h2>
-            <p className="text-pink-600 font-gothic tracking-[0.3em] font-bold">METHOD</p>
-            <div className="w-16 h-1 bg-pink-500 mx-auto mt-8"></div>
+            <h2 className="font-mincho text-3xl md:text-5xl font-bold text-slate-800 mb-6 tracking-wide">
+              指導者として輝くための<br className="md:hidden" />3ステップ
+            </h2>
+            <p className="text-amber-600 font-gothic tracking-[0.4em] font-bold text-sm uppercase">Method</p>
+            <div className="w-12 h-[2px] bg-gradient-to-r from-rose-400 to-amber-400 mx-auto mt-8"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
             {/* Step 1 */}
-            <div className="group bg-offwhite p-12 rounded-[3rem] border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-xl hover:border-pink-200 transition-all duration-500">
-              <div className="absolute top-0 right-0 bg-pink-500 text-white font-bold py-2 px-6 rounded-bl-3xl text-sm tracking-widest">STEP 01</div>
-              <div className="mb-8 w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-pink-500 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                <Search size={40} />
+            <div className="group relative bg-white p-10 pt-16 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(244,63,94,0.1)] transition-all duration-500 border border-slate-50 overflow-hidden">
+              {/* 背景の数字 - 中央に巨大配置 */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span className="text-[240px] font-serif leading-none text-rose-50/40 select-none transform translate-y-16 group-hover:scale-110 transition-transform duration-700 font-medium">1</span>
               </div>
-              <h3 className="text-2xl font-bold mb-6 font-mincho">認識する</h3>
-              <p className="text-gray-600 leading-loose text-lg">
-                自信のなさ、お客さんに迎合してしまうのは、自分自身の自信のなさから来ていることを認識する。
-              </p>
+              
+              {/* アイコンエリア - 幾何学的な装飾でリッチに */}
+              <div className="relative mb-10 mx-auto w-28 h-28">
+                {/* 装飾的な円（ゆっくり回転） */}
+                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" />
+                <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
+                
+                {/* 中央のアイコンコンテナ */}
+                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Search size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className="relative z-10 text-center">
+                <p className="text-amber-500 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Step 01</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 font-mincho text-slate-800">認識する</h3>
+                
+                <p className="text-slate-600 leading-loose text-base md:text-lg font-gothic text-justify px-4">
+                  自信のなさ、お客さんに迎合してしまうのは、自分自身の自信のなさから来ていることを認識する。
+                </p>
+              </div>
             </div>
 
             {/* Step 2 */}
-            <div className="group bg-offwhite p-12 rounded-[3rem] border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-xl hover:border-pink-200 transition-all duration-500 md:translate-y-8">
-              <div className="absolute top-0 right-0 bg-pink-500 text-white font-bold py-2 px-6 rounded-bl-3xl text-sm tracking-widest">STEP 02</div>
-              <div className="mb-8 w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-pink-500 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                <Brain size={40} />
+            <div className="group relative bg-white p-10 pt-16 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(244,63,94,0.1)] transition-all duration-500 border border-slate-50 overflow-hidden md:translate-y-12">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span className="text-[240px] font-serif leading-none text-rose-50/40 select-none transform translate-y-16 group-hover:scale-110 transition-transform duration-700 font-medium">2</span>
               </div>
-              <h3 className="text-2xl font-bold mb-6 font-mincho">客観的に理解する</h3>
-              <p className="text-gray-600 leading-loose text-lg">
-                「自分のことは自分でわからない」問題を克服し、自分のことを客観的に理解する。
-              </p>
+              
+              <div className="relative mb-10 mx-auto w-28 h-28">
+                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" style={{ animationDirection: 'reverse' }} />
+                <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
+                
+                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Brain size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className="relative z-10 text-center">
+                <p className="text-amber-500 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Step 02</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 font-mincho text-slate-800">客観的に理解する</h3>
+                
+                <p className="text-slate-600 leading-loose text-base md:text-lg font-gothic text-justify px-4">
+                  「自分のことは自分でわからない」問題を克服し、自分のことを客観的に理解する。
+                </p>
+              </div>
             </div>
 
             {/* Step 3 */}
-            <div className="group bg-offwhite p-12 rounded-[3rem] border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-xl hover:border-pink-200 transition-all duration-500">
-              <div className="absolute top-0 right-0 bg-pink-500 text-white font-bold py-2 px-6 rounded-bl-3xl text-sm tracking-widest">STEP 03</div>
-              <div className="mb-8 w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-pink-500 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                <Lightbulb size={40} />
+            <div className="group relative bg-white p-10 pt-16 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(244,63,94,0.1)] transition-all duration-500 border border-slate-50 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                 <span className="text-[240px] font-serif leading-none text-rose-50/40 select-none transform translate-y-16 group-hover:scale-110 transition-transform duration-700 font-medium">3</span>
               </div>
-              <h3 className="text-2xl font-bold mb-6 font-mincho">自分主導へ</h3>
-              <p className="text-gray-600 leading-loose text-lg">
-                自分のことがわかると自然と自信になり、そうなった自分で接することで、自分主導のビジネスになる。
-              </p>
+              
+              <div className="relative mb-10 mx-auto w-28 h-28">
+                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" />
+                <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
+                
+                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Lightbulb size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className="relative z-10 text-center">
+                <p className="text-amber-500 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Step 03</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 font-mincho text-slate-800">自分主導へ</h3>
+                
+                <p className="text-slate-600 leading-loose text-base md:text-lg font-gothic text-justify px-4">
+                  自分のことがわかると自然と自信になり、そうなった自分で接することで、自分主導のビジネスになる。
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -471,17 +522,41 @@ export default function HomePage() {
                 <p className="text-pink-600 font-bold tracking-[0.3em] text-sm uppercase">Fumiko Yamazaki</p>
               </div>
               
-              <div className="space-y-8 text-gray-600 leading-loose text-lg font-gothic">
+              <div className="space-y-6 text-gray-600 leading-loose text-base md:text-lg font-gothic">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-800 font-mincho mb-6 leading-relaxed border-b border-pink-100 pb-4">
+                  私は自分の自信をつけ、<br/>
+                  生徒さん主導ではなく<br/>
+                  <span className="text-pink-600">あなた主導の運動指導者</span>に<br/>
+                  なってもらいたい
+                </h3>
+
                 <p>
-                  私は体力には自信のある方ですが、それでも、「いつまで続けられるのだろう？」という不安の中にいました。
-                  そんな真っ暗な不安の中で出会ったのが、「道売り（知識労働）」という働き方でした。
-                </p>
-                <p className="border-l-4 border-pink-200 pl-6 italic">
-                  そろそろ「こうあるべき」「こうではなくてはいけない」という、幼少期からの思い込み（鍋の中）から出て、ご自身の経験してきたこと全てを、知識労働として売上に変える方向にシフトしていきませんか？
+                  私はこれまで、常に自信がなく、いつもお客さんに迎合したりする自分を責めていました。
                 </p>
                 <p>
-                  私は良くも悪くもあなたに寄り添える人間です。たまにめんどくさいと感じられることもあるのですが（笑）、それが私の特技であり、何を言ってもらっても受け止めることができるし、必ずあなたの力になれると信じています。
+                  その自信のなさは、ついついお客さんに自分を合わせてしまうため、どうしても私のビジネスは低単価、お客さんの言いなりになってしまい、なんとか、この状況を打破したいと常に思っていたんですね。
                 </p>
+                <p>
+                  でも、なぜ自分に自信がないのか？迎合してしまうのか？自分でもよくわからなかった。
+                </p>
+                <p>
+                  そうやって運動系の指導者を続けること16年。
+                </p>
+                <p>
+                  その自信のなさを補おうと、資格をたくさん取ったり、技術を磨いたりしてきたのですが、いつまで経っても自信のなさは消えず、常にモヤモヤの中、お客さんと対峙していたように思います。
+                </p>
+                <p>
+                  しかし、ある時、自分の自信のなさは、自分のことが自分でわからないことに原因があることに気づき、私は自分のことをとにかくわかろうわかろうという頭になりました。
+                </p>
+                <p>
+                  そして苦労して自分のこと、弱さ、強さ、そして人から見た魅力、こういったものが自分でわかった時、自然と自信がつき、お客さんに対しての態度と指導方法、客単価も変わっていきました。
+                </p>
+                <div className="bg-pink-50 p-6 rounded-2xl border border-pink-100 mt-4">
+                  <p className="font-bold text-slate-700">
+                    そんな経験から、私は昔の私と同じように、自分の自信のなさから指導者としてポテンシャルを出し切れていない人の底力を解放するためのお手伝いをさせてもらっています。
+                  </p>
+                </div>
+
                 <div className="pt-4">
                   <Link href="/about" className="text-pink-600 font-bold hover:gap-4 transition-all flex items-center gap-2 group">
                     詳しいプロフィールを読む
@@ -509,12 +584,12 @@ export default function HomePage() {
         
         <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center text-white">
           <h2 className="font-mincho text-3xl md:text-5xl font-bold mb-10 leading-tight">
-            まずは、あなたの今の悩みや<br />
-            掴みたい未来を私に話に来てください。
+            運動系指導者の方を<br className="md:hidden" />応援しています
           </h2>
           <p className="text-xl md:text-2xl mb-16 text-gray-300 leading-relaxed">
-            不安があっても大丈夫だし、今のお仕事を辞める必要もありません。<br />
-            ご自身の変化が、新しい未来に連れていってくれます。
+            自信を取り戻し、凛とした指導者となり<br className="hidden md:block" />
+            生徒さんを主導しながら教えることができる人を応援しています。<br />
+            こちらから。
           </p>
           
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
@@ -539,6 +614,20 @@ export default function HomePage() {
             <h2 className="font-mincho text-3xl font-bold text-charcoal">Fumiko Yamazaki</h2>
             <p className="text-pink-600 font-bold tracking-[0.4em] text-xs mt-3 uppercase">運動指導者育成コーチ</p>
           </div>
+          
+          {/* SNS Links */}
+          <div className="flex justify-center gap-8 mb-12">
+            <a href="https://www.instagram.com/fumiko.yamazaki/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Instagram
+            </a>
+            <a href="https://www.threads.net/@fumiko.yamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Threads
+            </a>
+            <a href="https://note.com/fumikoyamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Note
+            </a>
+          </div>
+
           <p className="text-sm text-gray-400 font-gothic">
             &copy; {new Date().getFullYear()} Fumiko Yamazaki. All Rights Reserved.
           </p>

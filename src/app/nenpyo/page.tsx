@@ -45,6 +45,14 @@ export default function NenpyoPage() {
             className="w-full md:w-2/3 space-y-8 pt-20 md:pt-0"
           >
             <p className="font-bold text-rose-500 tracking-widest uppercase">For Instructors</p>
+            
+            <div className="py-2">
+              <h2 className="font-mincho font-bold text-slate-700 leading-tight">
+                <span className="text-lg md:text-xl block mb-2">山﨑史子による</span>
+                <span className="text-3xl md:text-4xl lg:text-5xl block tracking-wide border-b-[6px] border-rose-100/60 w-fit">未来書き換え自分年表作成講座</span>
+              </h2>
+            </div>
+
             <h1 className="font-mincho text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-800">
               <span className="block mb-4">自分のことを知れば、</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-600">
@@ -471,6 +479,19 @@ export default function NenpyoPage() {
       {/* Footer */}
       <footer className="bg-white py-12 border-t border-slate-100">
         <div className="container mx-auto px-6 text-center">
+          {/* SNS Links */}
+          <div className="flex justify-center gap-8 mb-8">
+            <a href="https://www.instagram.com/fumiko.yamazaki/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Instagram
+            </a>
+            <a href="https://www.threads.net/@fumiko.yamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Threads
+            </a>
+            <a href="https://note.com/fumikoyamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+              Note
+            </a>
+          </div>
+
           <p className="text-sm text-gray-400 font-gothic">
             &copy; {new Date().getFullYear()} Fumiko Yamazaki. All Rights Reserved.
           </p>
