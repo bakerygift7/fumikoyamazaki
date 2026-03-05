@@ -65,15 +65,20 @@ export default function NenpyoPage() {
             </p>
             
             <div className="pt-8">
-              <Link 
-                href="#cta" 
-                className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-gradient-to-r from-rose-500 to-amber-500 rounded-full hover:shadow-[0_10px_30px_-10px_rgba(245,158,11,0.6)] transform hover:-translate-y-1 overflow-hidden"
+              <a 
+                href="#cta"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-gradient-to-r from-rose-500 to-amber-500 rounded-full hover:shadow-[0_10px_30px_-10px_rgba(245,158,11,0.6)] transform hover:-translate-y-1 overflow-hidden cursor-pointer"
               >
                 <span className="tracking-widest relative z-10">まずは無料相談会に申し込む</span>
                 <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </div>
           </motion.div>
+
         </div>
       </section>
 
@@ -458,7 +463,7 @@ export default function NenpyoPage() {
             </p>
 
             <a 
-              href="https://lin.ee/xxxxxxx" // LINEリンクは後で差し替え
+              href="https://s.lmes.jp/landing-qr/2006531142-KVp4k2VM?uLand=X1cXM7"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white transition-all duration-300 bg-[#06C755] rounded-full hover:shadow-[0_10px_30px_-10px_rgba(6,199,85,0.6)] transform hover:-translate-y-1 overflow-hidden w-full md:w-auto"
@@ -481,13 +486,13 @@ export default function NenpyoPage() {
         <div className="container mx-auto px-6 text-center">
           {/* SNS Links */}
           <div className="flex justify-center gap-8 mb-8">
-            <a href="https://www.instagram.com/fumiko.yamazaki/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://www.instagram.com/fumiko.bloom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Instagram
             </a>
-            <a href="https://www.threads.net/@fumiko.yamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://www.threads.com/@fumiko.bloom?hl=ja" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Threads
             </a>
-            <a href="https://note.com/fumikoyamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://note.com/fumikoara" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Note
             </a>
           </div>

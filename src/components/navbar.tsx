@@ -17,7 +17,8 @@ type NavItem = {
 const navItems: NavItem[] = [
     { name: "HOME", labelJA: "ホーム", href: "/", icon: Home },
     { name: "ABOUT", labelJA: "私について", href: "/about", icon: User },
-    { name: "E-BOOK", labelJA: "小冊子", href: "#ebook", icon: BookOpen },
+    { name: "E-BOOK", labelJA: "小冊子", href: "/ebook", icon: BookOpen },
+    { name: "NENPYO", labelJA: "自分年表講座", href: "/nenpyo", icon: Heart },
 ];
 
 export default function Navbar() {

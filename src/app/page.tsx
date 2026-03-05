@@ -278,7 +278,7 @@ export default function HomePage() {
                   Message
                 </span>
                 <h3 className="font-mincho text-3xl lg:text-4xl font-bold leading-relaxed text-slate-800">
-                  私は自分の自信をつけ、<br/>
+                  私は自分に自信をつけ、<br/>
                   生徒さん主導ではなく、<br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-600">
                     あなた主導の運動指導者
@@ -339,15 +339,20 @@ export default function HomePage() {
                  <span className="text-[240px] font-serif leading-none text-rose-50/40 select-none transform translate-y-16 group-hover:scale-110 transition-transform duration-700 font-medium">1</span>
               </div>
               
-              {/* アイコンエリア - 幾何学的な装飾でリッチに */}
+              {/* アイコンエリア - 写真に変更 */}
               <div className="relative mb-10 mx-auto w-28 h-28">
                 {/* 装飾的な円（ゆっくり回転） */}
-                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" />
+                <div className="absolute inset-0 rounded-full border-[3px] border-rose-300 border-dashed animate-[spin_20s_linear_infinite] opacity-80" />
                 <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
                 
-                {/* 中央のアイコンコンテナ */}
-                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
-                  <Search size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                {/* 中央の画像コンテナ */}
+                <div className="absolute inset-2 rounded-full overflow-hidden z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Image
+                    src="/images/fumi-navy.png"
+                    alt="認識する"
+                    fill
+                    className="object-cover object-center"
+                  />
                 </div>
               </div>
 
@@ -368,11 +373,16 @@ export default function HomePage() {
               </div>
               
               <div className="relative mb-10 mx-auto w-28 h-28">
-                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" style={{ animationDirection: 'reverse' }} />
+                <div className="absolute inset-0 rounded-full border-[3px] border-rose-300 border-dashed animate-[spin_20s_linear_infinite] opacity-80" style={{ animationDirection: 'reverse' }} />
                 <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
                 
-                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
-                  <Brain size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                <div className="absolute inset-2 rounded-full overflow-hidden z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Image
+                    src="/images/fumi-pointing.png"
+                    alt="客観的に理解する"
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
 
@@ -393,11 +403,16 @@ export default function HomePage() {
               </div>
               
               <div className="relative mb-10 mx-auto w-28 h-28">
-                <div className="absolute inset-0 rounded-full border border-rose-100 border-dashed animate-[spin_20s_linear_infinite] opacity-70" />
+                <div className="absolute inset-0 rounded-full border-[3px] border-rose-300 border-dashed animate-[spin_20s_linear_infinite] opacity-80" />
                 <div className="absolute inset-3 rounded-full border border-amber-50 opacity-80" />
                 
-                <div className="absolute inset-5 rounded-full bg-gradient-to-br from-white to-rose-50 shadow-[0_8px_20px_-6px_rgba(244,63,94,0.15)] flex items-center justify-center relative z-10 group-hover:-translate-y-1 transition-transform duration-500">
-                  <Lightbulb size={32} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-500" strokeWidth={1.5} />
+                <div className="absolute inset-2 rounded-full overflow-hidden z-10 group-hover:-translate-y-1 transition-transform duration-500">
+                  <Image
+                    src="/images/fumi-smile.png"
+                    alt="自分主導へ"
+                    fill
+                    className="object-cover object-center"
+                  />
                 </div>
               </div>
 
@@ -524,7 +539,7 @@ export default function HomePage() {
               
               <div className="space-y-6 text-gray-600 leading-loose text-base md:text-lg font-gothic">
                 <h3 className="text-xl md:text-2xl font-bold text-slate-800 font-mincho mb-6 leading-relaxed border-b border-pink-100 pb-4">
-                  私は自分の自信をつけ、<br/>
+                  私は自分に自信をつけ、<br/>
                   生徒さん主導ではなく<br/>
                   <span className="text-pink-600">あなた主導の運動指導者</span>に<br/>
                   なってもらいたい
@@ -592,18 +607,11 @@ export default function HomePage() {
             こちらから。
           </p>
           
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <a href="#" className="w-full md:w-auto px-12 py-5 bg-pink-500 text-white font-bold text-xl rounded-full shadow-xl hover:bg-pink-600 transition-all hover:-translate-y-1">
+          <div className="flex justify-center">
+            <Link href="/ebook" className="w-full md:w-auto px-12 py-5 bg-pink-500 text-white font-bold text-xl rounded-full shadow-xl hover:bg-pink-600 transition-all hover:-translate-y-1">
               小冊子を無料で読む
-            </a>
-            <Link href="/contact" className="w-full md:w-auto px-12 py-5 bg-white text-charcoal font-bold text-xl rounded-full shadow-xl hover:bg-gray-100 transition-all hover:-translate-y-1">
-              無料相談に申し込む
             </Link>
           </div>
-          
-          <Link href="/contact" className="inline-block mt-12 text-pink-400 font-bold text-lg hover:text-pink-300 transition-colors underline underline-offset-8">
-            その他のお問い合わせはこちら
-          </Link>
         </div>
       </section>
 
@@ -617,13 +625,13 @@ export default function HomePage() {
           
           {/* SNS Links */}
           <div className="flex justify-center gap-8 mb-12">
-            <a href="https://www.instagram.com/fumiko.yamazaki/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://www.instagram.com/fumiko.bloom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Instagram
             </a>
-            <a href="https://www.threads.net/@fumiko.yamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://www.threads.com/@fumiko.bloom?hl=ja" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Threads
             </a>
-            <a href="https://note.com/fumikoyamazaki" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
+            <a href="https://note.com/fumikoara" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors font-gothic font-bold tracking-wider text-sm">
               Note
             </a>
           </div>

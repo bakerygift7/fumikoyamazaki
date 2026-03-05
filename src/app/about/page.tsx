@@ -14,23 +14,29 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-offwhite font-gothic text-charcoal">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gold-50">
+      <section ref={heroRef} className="relative h-screen min-h-[600px] flex items-end justify-start overflow-hidden">
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
-          {/* Placeholder for Hero Image */}
-          <div className="absolute inset-0 bg-gold-100 flex items-center justify-center text-gold-300">
-             <span className="text-4xl font-bold opacity-30">Hero Image Placeholder</span>
-          </div>
-          <div className="absolute inset-0 bg-black/10" />
+          <Image
+            src="/images/fumi-about-hero.png"
+            alt="山﨑史子"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* 左下グラデーション（テキスト可読性） */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
         </motion.div>
         
         <motion.div 
           style={{ opacity: heroTextOpacity }}
-          className="relative z-10 text-center text-white mix-blend-overlay"
+          className="relative z-10 pb-16 pl-10 md:pl-20"
         >
-          <h1 className="font-mincho text-5xl md:text-7xl font-bold tracking-widest drop-shadow-lg mb-4 text-charcoal">
+          <p className="text-rose-300 font-bold tracking-[0.4em] text-sm uppercase mb-3">運動指導者育成コーチ</p>
+          <h1 className="font-mincho text-5xl md:text-7xl font-bold tracking-widest drop-shadow-lg mb-3 text-white">
             山﨑 史子
           </h1>
-          <p className="text-lg md:text-xl font-gothic tracking-[0.2em] opacity-90 text-charcoal">
+          <p className="text-lg md:text-xl font-gothic tracking-[0.3em] text-white/80">
             FUMIKO YAMAZAKI
           </p>
         </motion.div>
@@ -73,19 +79,38 @@ export default function AboutPage() {
             そんな経験から、私は昔の私と同じように、自分の自信のなさから指導者としてポテンシャルを出し切れていない人の底力を解放するためのお手伝いをさせてもらっています。
           </p>
 
-          <div className="bg-gold-50 p-8 rounded-2xl border border-gold-100 mt-12">
-            <h4 className="text-xl font-bold text-charcoal mb-6">あとがきより</h4>
-            <p className="mb-4">
-              私は体力には自信のある方ですが、それでも、
-            </p>
-            <ul className="list-disc list-inside mb-4 pl-4 space-y-2">
-              <li>トレーナーとして肉体労働をベースにしていつまで続けられるのだろう？</li>
-              <li>がむしゃらに肉体労働を増やしても収入に限界がある</li>
-              <li>一生懸命になろうとすればするほど空回りする</li>
-            </ul>
+          <div className="bg-white p-8 md:p-12 rounded-2xl border-l-4 border-rose-300 shadow-sm mt-16 space-y-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 font-mincho leading-relaxed">
+              私の自信を取り戻してくれたもの、<br/>
+              それが<span className="text-rose-600">未来書き換え自分年表作成講座</span>という講座でした。
+            </h3>
+            
             <p>
-              そんな真っ暗な不安の中で出会ったのが、「道売り（知識労働）」という働き方でした。<br/>
-              そして道売りへのシフトが本当に私に大きな衝撃を与え、まさに私の未来を書き換えてくれました。
+              この講座は、自分の０歳から22歳までを内観して振り返り、自分史年表にすることで、自分自身ではわからなかった、自分の弱さ、強さ、人から見た魅力を自分でわかるという画期的な講座で、私はこの講座を受け、今までなぜ、指導者として自信が持てなかったのかということがはっきりと理解できました。
+            </p>
+
+            <div className="text-center py-4">
+              <p className="inline-block text-xl md:text-2xl font-bold text-slate-700 border-b-2 border-rose-200 pb-1">
+                ー自分のことは自分が一番わからない問題
+              </p>
+            </div>
+
+            <p>
+              それを自分自身の内観でわかってしまうというマジックは、私の弱さと強さは実は表裏一体なんだということを教えてくれて、変な表現ですが、弱さを認められたら、逆に自信がついたような感じになり、その時から、お客さんの対しての態度や売り上げが変わっていったように思います。
+            </p>
+
+            <div className="bg-rose-50 p-6 rounded-xl text-center">
+              <p className="text-xl md:text-2xl font-bold text-rose-600 font-mincho">
+                「この講座はすべての運動系指導者に受けてもらいたい！」
+              </p>
+            </div>
+
+            <p>
+              感動した私は受講後、すぐに認定講師になり、これまで20人以上の指導者の方にこの講座を受講していただいてますが、みんなにすごい変化をもたらしています。
+            </p>
+
+            <p className="font-bold text-slate-800">
+              なので今私は、この未来書き換え自分年表作成講座と、自信をつけた後の具体的なお客さんへの指導法を合わせて教えていて、自信を持てる指導者さんの育成に努めています。
             </p>
           </div>
         </div>
