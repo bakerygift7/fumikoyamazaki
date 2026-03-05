@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Footer from '@/components/footer'
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -161,19 +162,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-100 text-center bg-white relative z-10">
-        <Link href="/" className="font-mincho text-xl font-bold text-charcoal hover:text-gold-600 transition-colors">
-          Fumiko Yamazaki
-        </Link>
-        <div className="mt-4 text-sm text-gray-500 space-y-1">
-          <p>運動指導者育成コーチ</p>
-          <p>未来書き換え自分年表作成講座認定講師</p>
-        </div>
-        <p className="text-sm text-gray-400 mt-8">
-          &copy; {new Date().getFullYear()} Fumiko Yamazaki. All Rights Reserved.
-        </p>
-      </footer>
+      <Footer />
     </div>
   )
 }

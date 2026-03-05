@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CheckCircle2, BookOpen, ArrowRight, Download, Star } from 'lucide-react';
+import Footer from '@/components/footer';
 
 export default function EbookPage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -336,14 +337,7 @@ export default function EbookPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white py-12 border-t border-slate-100">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400 font-gothic">
-            &copy; {new Date().getFullYear()} Fumiko Yamazaki. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

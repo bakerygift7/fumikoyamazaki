@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle2, Loader2, ArrowRight } from 'lucide-react'
+import Footer from '@/components/footer'
 
 export default function ContactPage() {
   // Form State
@@ -206,6 +207,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
