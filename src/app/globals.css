@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fff0f8;
+  --color-gold-100: #ffe4f3;
+  --color-gold-200: #ffd4f0;
+  --color-gold-300: #ff85c0;
+  --color-gold-400: #ff6bb3;
+  --color-gold-500: #ff1a8c;
+  --color-gold-600: #e91e8c;
+  --color-gold-700: #d946a6;
+  --color-gold-800: #b03080;
+  --color-gold-900: #8a2060;
+  
+  --color-charcoal: #333333;
+  --color-offwhite: #f9f4f0;
+  --color-bronze: #cd7f32;
+
+  --font-mincho: "Zen Old Mincho", serif;
+  --font-gothic: "Zen Kaku Gothic New", sans-serif;
+}
+
+/* Base font size */
+html {
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Custom Utilities */
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}

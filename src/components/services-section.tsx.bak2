@@ -1,0 +1,81 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Zap, ShieldCheck, PenTool, Sparkles } from "lucide-react";
+import React from "react";
+import { ServiceData } from "@/lib/markdown";
+
+const iconMap = {
+  "philosophy-extraction": Zap,
+  "mythic-storytelling": PenTool,
+  "srs-website": ShieldCheck,
+  "future-timeline": Sparkles,
+};
+
+interface ServicesSectionProps {
+  label: string;
+  title: string;
+  services: ServiceData[];
+}
+
+export default function ServicesSection({ label, title, services }: ServicesSectionProps) {
+  return (
+    <section className="py-32 px-6 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-16">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-500">{label}</h2>
+          <h3 className="text-5xl sm:text-7xl font-bold tracking-tighter font-noto text-white">{title}</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+          {services.map((service, index) => {
+            const Icon = iconMap[service.id as keyof typeof iconMap] || Sparkles;
+            const isMain = index === 0;
+            const isWide = index === 3;
+
+            return (
+              <div 
+                key={service.id} 
+                className={`group relative flex flex-col gap-6 p-8 rounded-[2.5rem] border border-zinc-800 transition-all duration-700 overflow-hidden hover:border-zinc-500 ${
+                  isMain ? "md:col-span-2 md:row-span-2 bg-gradient-to-br from-zinc-800 to-black" : 
+                  isWide ? "md:col-span-3 md:row-span-1 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900" :
+                  "md:col-span-1 md:row-span-1 bg-zinc-900/50"
+                }`}
+              >
+                {/* Hover Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className={`relative z-10 flex ${isWide ? 'flex-row items-center justify-between' : 'flex-col h-full'} gap-6`}>
+                  <div className={`flex flex-col gap-6 ${isWide ? 'max-w-2xl' : ''}`}>
+                    {/* Icon Container */}
+                    <div className="p-4 rounded-2xl bg-zinc-800/50 border border-zinc-700 w-fit group-hover:scale-110 group-hover:bg-white transition-all duration-700 shadow-xl">
+                      <Icon 
+                        size={isMain ? 40 : 24} 
+                        className="text-white group-hover:text-black transition-colors duration-700" 
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2 text-left">
+                      {service.label && (
+                        <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] mb-1">{service.label}</div>
+                      )}
+                      <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{service.subtitle}</div>
+                      <h4 className={`${isMain ? 'text-4xl sm:text-5xl' : 'text-2xl'} font-bold font-noto text-white`}>{service.title}</h4>
+                    </div>
+                    <p className="text-zinc-400 leading-relaxed text-sm sm:text-base text-left">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-xs font-bold text-zinc-500 group-hover:text-white transition-colors mt-auto">
+                    VIEW DETAILS <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

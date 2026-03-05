@@ -1,0 +1,231 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, Home, Target, BookOpen, ChevronDown, Info, Target as TargetIcon } from "lucide-react";
+
+type NavItem = {
+  name: string;
+  labelJA: string;
+  href: string;
+  icon: any;
+  dropdown?: { name: string; href: string }[];
+};
+
+const navItems: NavItem[] = [
+    { name: "HOME", labelJA: "ホーム", href: "/", icon: Home },
+    { name: "ABOUT", labelJA: "会社概要", href: "/about", icon: Info },
+    { name: "MISSION", labelJA: "理念", href: "/mission", icon: TargetIcon },
+    { name: "LOGS", labelJA: "ブログ", href: "/logs", icon: BookOpen },
+];
+
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname();
+
+  // 白背景のページかどうかを判定
+  const isWhitePage = pathname === "/about" || pathname === "/mission" || pathname === "/legal" || pathname === "/privacy" || pathname.startsWith("/logs/");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isStudio = pathname?.startsWith("/studio");
+  const isTools = pathname?.startsWith("/tools");
+
+  if (isStudio || isTools) return null;
+
+  return (
+    <>
+      <nav
+        className={`w-full transition-all duration-300 ${
+          isScrolled ? "py-4 bg-black/80 backdrop-blur-md" : "py-8 bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="group flex items-center gap-2">
+            <div className={`h-8 w-8 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-all duration-300 ${
+              isWhitePage && !isScrolled ? "bg-black text-white" : "bg-white text-black"
+            }`}>
+              <span className="font-black text-xl">G</span>
+            </div>
+            <span className={`text-xl font-bold tracking-tighter group-hover:opacity-70 transition-all uppercase ${
+              isWhitePage && !isScrolled ? "text-black" : "text-white"
+            }`}>
+              GIFT
+            </span>
+          </Link>
+
+          {/* Desktop Navigation (Floating Pill) */}
+          <div className={`hidden md:flex items-center gap-2 p-1.5 rounded-full border transition-all duration-500 relative ${
+            isWhitePage && !isScrolled 
+              ? "border-zinc-200 bg-white/80 backdrop-blur-xl shadow-lg" 
+              : "border-zinc-800 bg-black/40 backdrop-blur-xl shadow-2xl"
+          }`}>
+            {navItems.map((item) => (
+              <div key={item.name} className="relative group/item">
+                {item.dropdown ? (
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <button
+                      className={`px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2 group ${
+                        isWhitePage && !isScrolled
+                          ? "text-zinc-500 hover:text-black hover:bg-zinc-100"
+                          : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                      }`}
+                    >
+                      <div className="flex flex-col items-start leading-none">
+                        <span>{item.name}</span>
+                        <span className="text-[9px] font-medium opacity-60 group-hover:opacity-100 transition-opacity">{item.labelJA}</span>
+                      </div>
+                      <ChevronDown size={14} className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
+                    </button>
+
+                    <AnimatePresence>
+                      {isDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          className={`absolute top-full left-0 mt-2 w-48 p-2 rounded-2xl border shadow-2xl ${
+                            isWhitePage && !isScrolled
+                              ? "border-zinc-200 bg-white/95 backdrop-blur-xl"
+                              : "border-zinc-800 bg-zinc-900/90 backdrop-blur-xl"
+                          }`}
+                        >
+                          {item.dropdown.map((sub) => (
+                            <a
+                              key={sub.name}
+                              href={sub.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`block px-4 py-3 rounded-xl text-sm font-bold transition-all ${
+                                isWhitePage && !isScrolled
+                                  ? "text-zinc-500 hover:text-black hover:bg-zinc-100"
+                                  : "text-zinc-400 hover:text-white hover:bg-zinc-800"
+                              }`}
+                            >
+                              {sub.name}
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all block group ${
+                      isWhitePage && !isScrolled
+                        ? "text-zinc-500 hover:text-black hover:bg-zinc-100"
+                        : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                    }`}
+                  >
+                    <div className="flex flex-col items-center leading-none gap-0.5">
+                      <span>{item.name}</span>
+                      <span className="text-[9px] font-medium opacity-60 group-hover:opacity-100 transition-opacity tracking-widest">{item.labelJA}</span>
+                    </div>
+                  </Link>
+                )}
+              </div>
+            ))}
+            <div className={`h-8 w-[1px] mx-2 ${
+              isWhitePage && !isScrolled ? "bg-zinc-200" : "bg-zinc-800"
+            }`} />
+            <button className={`px-6 py-2 rounded-full text-sm font-black transition-all ${
+              isWhitePage && !isScrolled
+                ? "bg-black text-white hover:bg-zinc-800"
+                : "bg-white text-black hover:bg-zinc-200"
+            }`}>
+              Contact
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-3 rounded-full border backdrop-blur-md transition-all ${
+              isWhitePage && !isScrolled
+                ? "border-zinc-200 bg-white/80 text-black"
+                : "border-zinc-800 bg-black/40 text-white"
+            }`}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-[140] md:hidden bg-black/95 backdrop-blur-2xl pt-32 px-6 overflow-y-auto"
+          >
+            <div className="flex flex-col gap-8 pb-12">
+              {navItems.map((item) => (
+                <div key={item.name} className="flex flex-col gap-4">
+                  {item.dropdown ? (
+                    <>
+                      <div className="flex items-center gap-4 text-4xl font-bold text-zinc-500">
+                        <item.icon size={32} />
+                        <div className="flex flex-col items-start leading-none gap-1">
+                          <span>{item.name}</span>
+                          <span className="text-sm font-medium tracking-widest opacity-60">{item.labelJA}</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-4 pl-12">
+                        {item.dropdown.map((sub) => (
+                          <a
+                            key={sub.name}
+                            href={sub.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsOpen(false)}
+                            className="text-2xl font-bold text-zinc-400 hover:text-white"
+                          >
+                            {sub.name}
+                          </a>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-4 text-4xl font-bold text-zinc-500 hover:text-white transition-colors"
+                    >
+                      <item.icon size={32} />
+                      <div className="flex flex-col items-start leading-none gap-1">
+                        <span>{item.name}</span>
+                        <span className="text-sm font-medium tracking-widest opacity-60">{item.labelJA}</span>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="h-[1px] w-full bg-zinc-900" />
+              <button className="w-full py-6 rounded-2xl bg-white text-black text-2xl font-black">
+                Contact
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

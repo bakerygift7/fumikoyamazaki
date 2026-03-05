@@ -1,0 +1,103 @@
+---
+title: 倉地類人加奈子
+subtitle: Official Website
+slogan: SRSが高い人を世界に増やす
+heroDescription: 「自分のミタマの力を磨きその力を存分に発揮してビジネスを組み上げるそれが道売り。私たちは道売りができる人を応援しています」
+srsDefinition: 精神レベルが世界一高い人たち、それが日本人。日本人のあなたこそ、その繊細な感性で極限まで磨き上げていける力を持っている。そしてこれからの時代、その力を武器にあなたは輝ける。
+ultraCIntroTitle: SRSとは？
+ultraCIntroSubtitle: Soul Resonance Score
+ultraCIntroMain: 魂の共鳴度
+ultraCMainTitle: 私たちはあなたのSRSの高さを抽出し形にできる
+ultraCMainDescription: あなたが知っている「方法」は、あなたのミタマを武器にしてビジネスをするとなると不適切かもしれない
+ultraCOutroTitle: あなたの道はこれで世界に伝わる
+ultraCOutroDescription: 倉地類人倉地加奈子という道売りの応援者と共に
+architectsTitle: 道売りを教える人
+architectsDescription: 人のSRSを上げられる。あなたの高いSRSを形にできる。それが倉地類人と倉地加奈子
+ruiProfile: SRSという概念の提唱者。人のSRSの高さ（ミタマの力）を書籍やweb、商品など形にできる能力を持つ。神話に魅せられ神話の研究を長らくしてきたことによって独自の神話ライティングを身につけた。道売り物語プロデューサーでありWebプログラマー。
+kanakoProfile: 神話の流れを自らの人生で体験し、ミタマを磨いてきた経験を持つ。父親をなくした強い悲しみは、私に人の潜在意識に入って、その人の人生の役割を抽出できる力を授けた。その力を元に、道売りをしていくために必要な個人の理念（魂の声）を文字にする手伝いをライフワークにしている。道売りプロデューサー。理念抽出の専門家。
+combatPower: 530,000 (Initial)
+status: Construction Started
+architectName: Ruihito & Kanako Kurachi
+noteUrl: https://note.com/ruitokurachi
+noteRuiUrl: https://note.com/ruitokurachi
+noteKanakoUrl: https://note.com/kurachikanako912
+noteRuiText: 倉地類人のnoteで神話を知る
+noteKanakoText: 倉地加奈子のnoteで理念を知る
+servicesLabel: The Services
+servicesTitle: 提供サービス
+services:
+  - id: "philosophy-extraction"
+    title: "理念抽出コンサルティング"
+    subtitle: "魂の声の言語化"
+    description: "倉地加奈子の特殊能力を使った個人の理念を抽出するサービスです。あなたの魂からそこに宿る力を文字に変え、ビジネスに使える形に変換します。"
+    label: "Step 1"
+  - id: "mythic-storytelling"
+    title: "道売り物語作成サービス"
+    subtitle: "神話ライティング"
+    description: "神話のロジックをもとにこれまで300冊以上の物語を書いてきた倉地類人による書籍の原稿の執筆サービスです。"
+    label: "Step 2"
+  - id: "srs-website"
+    title: "SRS式ホームページ作成"
+    subtitle: "高次元Web構築"
+    description: "Next.jsというプログラムを使って魂に訴えるwebサイトを作り上げます。道売り専用のホームページ構築。"
+    label: "Step 3"
+  - id: "future-timeline"
+    title: "未来書き換え自分年表作成講座"
+    subtitle: "理念抽出の簡易版"
+    description: "300人以上の人が受講した非常に支持されている講座。まずはここから自分のミタマに触れてください。"
+    label: "Entry Course"
+ultraCCards:
+  - id: 1
+    title: "まずは理念を自分で知る"
+    subtitle: "SRS(ミタマ）の言語化"
+    description: "倉地加奈子による理念抽出カウンセリング、未来書き換え自分年表作成講座で、ミタマを言語化し、自分のビジネスの方向性を決める"
+    color: "bg-zinc-900"
+  - id: 2
+    title: "道売り物語の創作"
+    subtitle: "ミタマの魅力を人に伝える術を持つ"
+    description: "ミタマは物語（自分の神話）にしてはじめて人に伝わる形になる。倉地類人と書くか？自分で書くか？どちらにしても自分の神話をもつことが次のステップ"
+    color: "bg-zinc-800"
+  - id: 3
+    title: "ミタマが伝わる最新のもので打ち出せ"
+    subtitle: "ミタマは専用ツールで打ち出す"
+    description: "SRSが高いからこそ必要になる世界最高のwebの術。道売りには道売りにふさわしいやり方がある。道売りがしたいならあなたも時代遅れのものではなく最新のツールを。"
+    color: "bg-white text-black"
+    highlight: true
+mythicLogsLabel: 言霊を届ける
+mythicLogsTitle: "note"
+mythicLogs:
+  - id: "rui-note"
+    author: "倉地 類人"
+    title: "神話をわかりやすく理解する"
+    description: "「千の顔を持つ英雄」の構造を解き明かし、現代のビジネスと人生に生かすための神話的考察。深層論理を書いています"
+    url: "https://note.com/ruitokurachi"
+    image: "/images/REBIRTH_RUI.png"
+  - id: "kanako-note"
+    author: "倉地 加奈子"
+    title: "個人の理念を科学する"
+    description: "個人の理念とは何か？ミタマとは何か？ミタマと精神世界の繋がりについて深く考察しています"
+    url: "https://note.com/kurachikanako912"
+    image: "/images/REBIRTH_KANAKO.png"
+portfolioLabel: The Portfolio
+portfolioTitle: 実績
+portfolioProjects:
+  - id: 1
+    title: "理念抽出コンサルティング"
+    category: "コンサルティング"
+    description: "300人以上の個人の理念を抽出。それにより自分の道でビジネスを飛躍させることができた人を多く輩出してきた"
+    image: "/images/extraction_1.png"
+  - id: 2
+    title: "道売り物語（出版・kindle・電子書籍）"
+    category: "執筆"
+    description: "300冊以上の道売り物語をプロデュース"
+    image: "/images/vision.jpg"
+---
+
+## ミッションステートメント：SRSが高い人を世界中に増やす
+神話はSRSを高めるための方法が書いてある読み物です。SRSが高い人で世界中に溢れれば、争いは消え、全世界が一体になれる。ジョーゼフ・キャンベルが言った言葉。
+
+私たちはそんな世界を作りたい。SRS（Soul Resonance Score）魂の共鳴度を高めるために、自分のミタマの力、輝きを商品やサービスに変え、販売をする中で誰かのSRSを上げる。
+
+そんな働き方を私たちは道売りと呼んでいますが、ビジネスを教える中でそんなことができる人を増やしたい。
+
+私たちはそれをするためのサービスや学びを提供しています。
