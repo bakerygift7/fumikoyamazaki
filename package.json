@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "deploy": "node -e \"const {execSync}=require('child_process');const who=execSync('npx vercel whoami 2>/dev/null').toString().trim();const expected='fumikoara2311-4161';if(!who.includes(expected)){console.error('\\n❌ 違うアカウントでログイン中: '+who+'\\n✅ 正しいアカウント: '+expected+'\\n➡ npx vercel login で山﨑さんのアカウントでログインしてください');process.exit(1)}console.log('✅ アカウント確認OK: '+who);\"",
     "payload": "payload",
     "db:fresh": "payload migrate:fresh",
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types"
