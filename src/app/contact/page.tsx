@@ -59,10 +59,10 @@ export default function ContactPage() {
                 {/* 写真フレーム */}
                 <div className="relative aspect-[3/4] rounded-t-[10rem] rounded-b-[2rem] overflow-hidden shadow-2xl border-[6px] border-white z-10">
                   <Image
-                    src="/images/contact-hero.png"
+                    src="/images/fumi-contact-thinking.png"
                     alt="山﨑史子"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                     priority
                   />
                 </div>
