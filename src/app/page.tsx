@@ -261,10 +261,10 @@ export default function HomePage() {
                 {/* 画像本体 */}
                 <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-2xl">
                    <Image
-                     src="/images/fumi-message.png"
+                     src="/images/fumi-profile-sticks.png"
                      alt="山﨑史子"
                      fill
-                     className="object-cover object-center"
+                     className="object-cover object-top"
                    />
                 </div>
                 
