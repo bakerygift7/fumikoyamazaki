@@ -129,26 +129,28 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Layer 4: 人物 + ソファ */}
+        {/* Layer 4: 人物写真 */}
         <motion.div 
           style={{ y: personY, x: personMouseX, translateY: personMouseY }}
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-          className="absolute bottom-0 right-0 z-20 w-full h-[85%] md:h-[95%] pointer-events-none flex justify-end items-end"
+          className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-1/2 pr-12 pb-12 pointer-events-none"
         >
           <motion.div 
-            animate={{ y: [0, -5, 0] }}
+            animate={{ y: [0, -6, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-full h-full max-w-[1200px] mr-[-5%] md:mr-0"
+            className="relative w-[360px] lg:w-[420px] aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/80"
           >
             <Image
-              src="/images/person_final.png"
+              src="/images/fumi-hero-stretch.png"
               alt="Fumiko Yamazaki"
               fill
-              className="object-contain object-bottom md:object-right-bottom"
+              className="object-cover object-center"
               priority
             />
+            {/* オーバーレイで背景と馴染ませる */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
           </motion.div>
         </motion.div>
 
@@ -524,7 +526,7 @@ export default function HomePage() {
                  <div className="absolute inset-0 bg-pink-200 rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                  <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
                    <Image
-                     src="/images/person_final.png"
+                     src="/images/fumi-hero-stretch.png"
                      alt="山﨑史子"
                      fill
                      className="object-cover object-center scale-110 group-hover:scale-100 transition-transform duration-700"
