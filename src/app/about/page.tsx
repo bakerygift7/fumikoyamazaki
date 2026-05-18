@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section ref={heroRef} className="relative h-screen min-h-[600px] flex items-end justify-start overflow-hidden">
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <Image
-            src="/images/fumi-about-hero.png"
+            src="/images/fumi-about-pointing.png"
             alt="山﨑史子"
             fill
             className="object-cover object-center"
