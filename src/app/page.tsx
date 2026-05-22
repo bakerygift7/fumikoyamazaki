@@ -135,36 +135,36 @@ export default function HomePage() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-          className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-1/2 pr-12 pb-12 pointer-events-none"
+          className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-full pointer-events-none overflow-hidden"
         >
           {/* 背面の装飾レイヤー（さらに深い視差） */}
           <motion.div 
             style={{ 
-              y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]),
-              x: useTransform(smoothMouseX, [-0.5, 0.5], ["3%", "-3%"]) 
+              y: useTransform(scrollYProgress, [0, 1], ["0%", "20%"]),
+              x: useTransform(smoothMouseX, [-0.5, 0.5], ["5%", "-5%"]) 
             }}
-            className="absolute bottom-[15%] right-[15%] w-[320px] lg:w-[380px] aspect-[1000/1096] bg-gradient-to-br from-rose-100/40 to-amber-100/40 rounded-[3rem] blur-2xl -z-10"
+            className="absolute bottom-[10%] right-[5%] w-[500px] lg:w-[700px] aspect-square bg-gradient-to-br from-rose-200/30 to-amber-100/20 rounded-full blur-[120px] -z-10"
           />
 
-          {/* 背面：装飾的な枠線レイヤー */}
+          {/* 背面：装飾的な枠線レイヤー（雑誌の表紙のようなイメージ） */}
           <motion.div 
             style={{ 
-              y: useTransform(scrollYProgress, [0, 1], ["0%", "5%"]),
+              y: useTransform(scrollYProgress, [0, 1], ["0%", "10%"]),
               x: useTransform(smoothMouseX, [-0.5, 0.5], ["2%", "-2%"]) 
             }}
-            className="absolute bottom-12 right-10 w-[340px] lg:w-[400px] aspect-[1000/1096] border-2 border-rose-200/50 rounded-[3rem] -rotate-3 -z-10"
+            className="absolute bottom-[5%] right-[2%] w-[500px] lg:w-[750px] aspect-[1000/1096] border border-rose-300/30 rounded-[4rem] rotate-2 -z-10"
           />
 
           <motion.div 
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[420px] lg:w-[500px] aspect-[1000/1096]"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-[600px] lg:w-[850px] aspect-[1000/1096] -mr-[5%] lg:-mr-[12%] mb-[-2%]"
           >
             <Image
               src="/images/fumi.png"
               alt="Fumiko Yamazaki"
               fill
-              className="object-contain object-center"
+              className="object-contain object-bottom"
               priority
             />
           </motion.div>
