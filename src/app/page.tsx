@@ -140,7 +140,7 @@ export default function HomePage() {
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[48vw] max-w-[780px] aspect-[1000/1096] -mr-[4%] mb-[-1%]"
+            className="relative w-[35vw] max-w-[560px] aspect-[1000/1096] mr-[2%] mb-[0%]"
           >
             <Image
               src="/images/fumi.png"
