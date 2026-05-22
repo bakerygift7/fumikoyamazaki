@@ -129,7 +129,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Layer 4: 人物写真 - 極大化・シンプル配置 */}
+        {/* Layer 4: 人物写真 - サイズと位置の最適化 */}
         <motion.div 
           style={{ y: personY, x: personMouseX, translateY: personMouseY }}
           initial={{ y: 50, opacity: 0 }}
@@ -138,9 +138,9 @@ export default function HomePage() {
           className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-full pointer-events-none"
         >
           <motion.div 
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[70vw] max-w-[1100px] aspect-[1000/1096] -mr-[15%] -mb-[2%]"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-[48vw] max-w-[780px] aspect-[1000/1096] -mr-[4%] mb-[-1%]"
           >
             <Image
               src="/images/fumi.png"
