@@ -537,7 +537,7 @@ export default function HomePage() {
                  <div className="absolute inset-0 bg-pink-200 rounded-[3rem] rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                  <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
                    <Image
-                     src="/images/fumi-profile-sticks.png"
+                     src="/images/fumi-profile-laugh.png"
                      alt="山﨑史子"
                      fill
                      className="object-cover object-top scale-110 group-hover:scale-100 transition-transform duration-700"
