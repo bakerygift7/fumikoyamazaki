@@ -143,7 +143,7 @@ export default function HomePage() {
               y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]),
               x: useTransform(smoothMouseX, [-0.5, 0.5], ["3%", "-3%"]) 
             }}
-            className="absolute bottom-[15%] right-[15%] w-[320px] lg:w-[380px] aspect-[3/4] bg-gradient-to-br from-rose-100/40 to-amber-100/40 rounded-[3rem] blur-2xl -z-10"
+            className="absolute bottom-[15%] right-[15%] w-[320px] lg:w-[380px] aspect-[1000/1096] bg-gradient-to-br from-rose-100/40 to-amber-100/40 rounded-[3rem] blur-2xl -z-10"
           />
 
           {/* 背面：装飾的な枠線レイヤー */}
@@ -152,23 +152,21 @@ export default function HomePage() {
               y: useTransform(scrollYProgress, [0, 1], ["0%", "5%"]),
               x: useTransform(smoothMouseX, [-0.5, 0.5], ["2%", "-2%"]) 
             }}
-            className="absolute bottom-12 right-10 w-[340px] lg:w-[400px] aspect-[3/4] border-2 border-rose-200/50 rounded-[3rem] -rotate-3 -z-10"
+            className="absolute bottom-12 right-10 w-[340px] lg:w-[400px] aspect-[1000/1096] border-2 border-rose-200/50 rounded-[3rem] -rotate-3 -z-10"
           />
 
           <motion.div 
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[380px] lg:w-[460px] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-8 border-white"
+            className="relative w-[420px] lg:w-[500px] aspect-[1000/1096] rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-8 border-white"
           >
             <Image
               src="/images/fumi.png"
               alt="Fumiko Yamazaki"
               fill
-              className="object-cover object-center"
+              className="object-contain object-top"
               priority
             />
-            {/* 高級感を出すためのソフトなオーバーレイ */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-rose-50/20 via-transparent to-amber-50/10" />
           </motion.div>
         </motion.div>
 
