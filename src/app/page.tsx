@@ -137,6 +137,17 @@ export default function HomePage() {
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
           className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-1/2 pr-12 pb-12 pointer-events-none"
         >
+          {/* 背面：スティック写真（少しずらして配置） */}
+          <div className="absolute bottom-10 right-8 w-[300px] lg:w-[340px] aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white/60 opacity-80 translate-x-6 translate-y-4">
+            <Image
+              src="/images/fumi-sticks-bg.png"
+              alt="Fumiko Yamazaki"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+
           <motion.div 
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
