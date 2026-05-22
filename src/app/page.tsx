@@ -129,36 +129,18 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Layer 4: 人物写真 */}
+        {/* Layer 4: 人物写真 - 極大化・シンプル配置 */}
         <motion.div 
           style={{ y: personY, x: personMouseX, translateY: personMouseY }}
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-          className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-full pointer-events-none overflow-hidden"
+          className="absolute bottom-0 right-0 z-20 hidden md:flex items-end justify-end h-full w-full pointer-events-none"
         >
-          {/* 背面の装飾レイヤー（さらに深い視差） */}
           <motion.div 
-            style={{ 
-              y: useTransform(scrollYProgress, [0, 1], ["0%", "20%"]),
-              x: useTransform(smoothMouseX, [-0.5, 0.5], ["5%", "-5%"]) 
-            }}
-            className="absolute bottom-[10%] right-[5%] w-[500px] lg:w-[700px] aspect-square bg-gradient-to-br from-rose-200/30 to-amber-100/20 rounded-full blur-[120px] -z-10"
-          />
-
-          {/* 背面：装飾的な枠線レイヤー（雑誌の表紙のようなイメージ） */}
-          <motion.div 
-            style={{ 
-              y: useTransform(scrollYProgress, [0, 1], ["0%", "10%"]),
-              x: useTransform(smoothMouseX, [-0.5, 0.5], ["2%", "-2%"]) 
-            }}
-            className="absolute bottom-[5%] right-[2%] w-[500px] lg:w-[750px] aspect-[1000/1096] border border-rose-300/30 rounded-[4rem] rotate-2 -z-10"
-          />
-
-          <motion.div 
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[600px] lg:w-[850px] aspect-[1000/1096] -mr-[5%] lg:-mr-[12%] mb-[-2%]"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-[70vw] max-w-[1100px] aspect-[1000/1096] -mr-[15%] -mb-[2%]"
           >
             <Image
               src="/images/fumi.png"
