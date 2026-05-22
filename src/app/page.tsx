@@ -158,13 +158,13 @@ export default function HomePage() {
           <motion.div 
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-[420px] lg:w-[500px] aspect-[1000/1096] rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-8 border-white"
+            className="relative w-[420px] lg:w-[500px] aspect-[1000/1096]"
           >
             <Image
               src="/images/fumi.png"
               alt="Fumiko Yamazaki"
               fill
-              className="object-contain object-top"
+              className="object-contain object-center"
               priority
             />
           </motion.div>
